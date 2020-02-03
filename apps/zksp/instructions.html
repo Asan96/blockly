@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>插件下载和使用</title>
+    <style>
+        body{
+            min-width:1200px;
+            overflow:auto;
+        }
+        .main_div{
+            width: 1200px;
+            background-color: floralwhite;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin-right: auto;
+            margin-left:auto;
+            margin-top: 80px;
+            margin-bottom:50px;
+            border-radius: 5px;
+        }
+        .point{
+            width:20px;
+            height:20px;
+            border-radius:50%;
+            background-color:orange;
+            margin-left: 100px;
+            margin-top: 20px;
+            margin-right: 30px;
+            padding: auto;
+            float: left;
+        }
+        p{
+            float: left;
+            line-height:25px;
+            font-size:16px;
+        }
+        .img{
+            margin: auto;
+            width: 640px;
+        }
+        .img_format{
+            width: 100%;
+            text-align: center;
+            float:left;
+        }
+        label{
+            color: red;
+        }
+        .brp{
+            margin-left: 150px;
+        }
+        .top_gap{
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="main_div">
+    <h3 style="width: 100%;text-align: center;margin-top: 30px">插件下载及使用说明</h3>
+
+    <i class="point"></i>
+    <p><strong>第一步：安装usb转串口驱动 cp210x 。</strong>点击 <a href="./plugin/cp210x.drivers.zip" download="cp210x.drivers.zip">驱动下载</a>，
+        下载并解压文件，根据自己电脑系统选择对应版本（只支持 win7、win8/win10）。<br/>
+        继续解压文件,选择 CP210xVCPInstaller_x64.exe（若电脑是32位选择 CP210xVCPInstaller_x86.exe ），双击安装。
+        检验是否安装成功:<br/>用USB连接物联板，电脑能正常识别串口即安装成功。</p>
+    <div class="img_format"><img class='img'src="./media/cp210x.driver.png"></div>
+
+    <i class="point"></i>
+    <p><strong>第二步：安装串口扩展程序。</strong><label>必须使用谷歌浏览器（Chrome）</label>,若无谷歌浏览器，请先
+        <a href="https://www.google.cn/intl/zh-CN/chrome/" target="_blank">下载</a> 安装! </p>
+    <p class="brp top_gap"><strong>2.1、</strong>若有谷歌浏览器直接点击
+        <a href="./plugin/ChromeSerialPortExtension.zip" download="ChromeSerialPortExtension.zip">扩展程序下载</a>
+        ，下载并解压文件，得到扩展程序。打开谷歌浏览器，按下图所示打开扩展程序选项。</p>
+    <div class="img_format"><img class="img" src="./media/SerialInstall_1.png"></div>
+    <p class="brp"><strong>2.2、</strong>在扩展程序页面右上角，打开开发者选项，如下图。</p>
+    <div class="img_format"><img style="width: 900px;margin: auto;height: 50px" src="./media/SerialInstall_2.png"></div>
+    <p class="brp"><strong>2.3、</strong>将刚才解压得到的 ChromeSerialPortExtension.crx 串口程序拖拽到当前扩展程序页面,如下图。</p>
+    <div class="img_format"><img class="img" src="./media/SerialInstall_3.png"></div>
+    <p class="brp"><strong>2.4、</strong>选择添加应用即可成功安装，如下图。</p>
+    <div class="img_format"><img class="img" src="./media/SerialInstall_4.png"></div>
+
+    <i class="point"></i>
+    <p><strong>第三步：编写图形化 Python程序。</strong>执行完前两步安装操作后，就可以在谷歌浏览器内进行图形化编码了。</p>
+    <p class="brp top_gap"><strong>3.1、</strong>从平台左侧模块菜单中选择类型， 将模块拖动到面板内进行图形化编码，
+        可以通过下方操作菜单进行代码的保存和导入，导入仅支持此<br/>平台保存格式的代码。</p>
+    <div class="img_format"><img class="img" src="./media/code_1.png"></div>
+    <p class="brp"><strong>3.2、</strong>在模块上邮件会出现下图操作。</p>
+    <div class="img_format"><img class="img" src="./media/code_2.png"></div>
+    <p class="brp"><strong>3.3、</strong>删除模块可直接点击模块按DELETE键或将模块拖动到面板右下方垃圾桶内。</p>
+    <div class="img_format"><img src="./media/code_3.png"></div>
+    <p class="brp"><strong>3.4、</strong>点击右侧按钮可显示图形化编程后生成的代码。</p>
+    <div class="img_format"><img class="img" src="./media/code_4.png"></div>
+    <p class="brp"><strong>3.5、</strong>平台不仅支持图形化编程，也可以通过页面上方代码功能进入代码编辑。</p>
+    <div class="img_format"><img class="img" src="./media/code_5.png"></div>
+    <i class="point"></i>
+    <p><strong>第四步：连接物联板并运行程序。</strong>使用USB连接物联板（必须执行完前两步安装操作）。</p>
+    <p class="brp top_gap"><strong>4.1、</strong>物联板开机后按返回按钮， 进入debug模式。</p>
+    <p class="brp top_gap"><strong>4.2、</strong>在页面下方执行刷新操作，在下拉框内选择新出现的串口，执行连接操作，显示“断开连接”则证明连接成功。</p>
+    <p class="brp top_gap"><strong>4.3、</strong>执行运行操作，即可运行上方已编辑的代码，下方会出现相应的结果输出。</p>
+</div>
+</body>
+</html>
